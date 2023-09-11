@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}User Detail{% endblock %}
+
+{% block header %}User Detail{% endblock %}
+
+{% block content %}
+<h2>User Information</h2>
+<p><strong>ID:</strong> {{ user.id }}</p>
+<p><strong>First Name:</strong> {{ user.first_name }}</p>
+<p><strong>Last Name:</strong> {{ user.last_name }}</p>
+<p><strong>Image URL:</strong> {{ user.image_url }}</p>
+<a href="/users/{{ user.id }}/edit" class="btn btn-primary">Edit User</a>
+<form method="POST" action="/users/{{ user.id }}/delete" style="display: inline;">
+    <button type="submit" class="btn btn-danger">Delete User</button>
+</form>
+{% endblock %}
